@@ -14,7 +14,7 @@ This repository provides comprehensive security rules for Claude Code, covering 
 - **OWASP Top 10 2025** - Complete coverage of modern web security risks
 - **AI/ML Security** - Rules for machine learning systems using NIST AI RMF, MITRE ATLAS, and Google SAIF
 - **Agentic AI Security** - Specialized rules for autonomous AI systems with tool use
-- **25 Rule Sets** - Covering 12 languages, 5 backend frameworks, and 5 frontend frameworks
+- **36 Rule Sets** - Covering 12 languages, 5 backend frameworks, 11 AI/ML frameworks, and 5 frontend frameworks
 - **Enforcement Levels** - Strict, warning, and advisory modes for different risk levels
 
 ## Quick Start
@@ -79,11 +79,22 @@ claude-secure-coding-rules/
 │   │   └── sql/CLAUDE.md        # SQL security (injection, permissions)
 │   │
 │   ├── backend/                 # Backend framework rules
-│   │   ├── fastapi/CLAUDE.md    # FastAPI (Pydantic, dependencies, auth)
+│   │   ├── fastapi/CLAUDE.md    # FastAPI (Pydantic, dependencies, auth, AI APIs)
 │   │   ├── express/CLAUDE.md    # Express.js (middleware, Helmet, sessions)
 │   │   ├── django/CLAUDE.md     # Django (ORM, CSRF, templates)
 │   │   ├── flask/CLAUDE.md      # Flask (Werkzeug, sessions, blueprints)
-│   │   └── nestjs/CLAUDE.md     # NestJS (decorators, guards, pipes)
+│   │   ├── nestjs/CLAUDE.md     # NestJS (decorators, guards, pipes)
+│   │   ├── langchain/CLAUDE.md  # LangChain (prompt injection, tool security, RAG)
+│   │   ├── crewai/CLAUDE.md     # CrewAI (multi-agent trust, delegation)
+│   │   ├── autogen/CLAUDE.md    # AutoGen (code execution, sandboxing)
+│   │   ├── transformers/CLAUDE.md # HF Transformers (model loading, tokenizers)
+│   │   ├── vllm/CLAUDE.md       # vLLM (KV cache, PagedAttention)
+│   │   ├── triton/CLAUDE.md     # Triton (GPU isolation, ensemble security)
+│   │   ├── torchserve/CLAUDE.md # TorchServe (MAR files, handlers)
+│   │   ├── ray-serve/CLAUDE.md  # Ray Serve (autoscaling, serialization)
+│   │   ├── bentoml/CLAUDE.md    # BentoML (packaging, runners)
+│   │   ├── mlflow/CLAUDE.md     # MLflow (model registry, artifacts)
+│   │   └── modal/CLAUDE.md      # Modal (serverless, secrets)
 │   │
 │   └── frontend/                # Frontend framework rules
 │       ├── react/CLAUDE.md      # React (XSS, state, forms)
@@ -314,6 +325,38 @@ cp rules/languages/rust/CLAUDE.md myproject/
 # - Properly handle FFI boundaries
 # - Prevent memory safety issues
 # - Apply cryptographic best practices
+```
+
+### AI/ML Applications (LangChain + vLLM)
+
+```bash
+# Setup
+cp rules/_core/ai-security.md myproject/.claude/
+cp rules/_core/agent-security.md myproject/.claude/
+cp rules/backend/langchain/CLAUDE.md myproject/agents/
+cp rules/backend/vllm/CLAUDE.md myproject/inference/
+
+# Claude Code will now:
+# - Prevent prompt injection attacks
+# - Require tool sandboxing and validation
+# - Enforce trust_remote_code=False for model loading
+# - Validate KV cache isolation in multi-tenant setups
+# - Implement token-based rate limiting
+```
+
+### Model Serving (TorchServe + MLflow)
+
+```bash
+# Setup
+cp rules/backend/torchserve/CLAUDE.md myproject/serving/
+cp rules/backend/mlflow/CLAUDE.md myproject/mlops/
+
+# Claude Code will now:
+# - Validate MAR file integrity before loading
+# - Sandbox custom handlers
+# - Secure model registry access
+# - Protect experiment tracking from data leakage
+# - Enforce artifact storage encryption
 ```
 
 ## Verifying Rules Are Active

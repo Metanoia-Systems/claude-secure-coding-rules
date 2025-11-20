@@ -11,7 +11,9 @@ This repository provides comprehensive security rules for Claude Code, covering 
 - AI/ML security (NIST AI RMF, MITRE ATLAS, Google SAIF)
 - Agentic AI security (tool use, autonomy, sandboxing)
 - Language-specific rules (Python, JavaScript, TypeScript, Go, Rust, Java, C#, Ruby, R, C++, Julia, SQL)
-- Framework-specific rules (FastAPI, Express, Django, Flask, NestJS, React, Next.js, Vue, Angular, Svelte)
+- Backend frameworks (FastAPI, Express, Django, Flask, NestJS)
+- AI/ML frameworks (LangChain, CrewAI, AutoGen, Transformers, vLLM, Triton, TorchServe, Ray Serve, BentoML, MLflow, Modal)
+- Frontend frameworks (React, Next.js, Vue, Angular, Svelte)
 
 ## Repository Structure
 
@@ -38,11 +40,22 @@ claude-secure-coding-rules/
 │   │   └── sql/CLAUDE.md          # Injection, permissions, stored procedures
 │   │
 │   ├── backend/                    # Backend framework rules
-│   │   ├── fastapi/CLAUDE.md      # Pydantic validation, JWT, authorization, CORS
+│   │   ├── fastapi/CLAUDE.md      # Pydantic validation, JWT, authorization, CORS, AI APIs
 │   │   ├── express/CLAUDE.md      # Helmet, sessions, rate limiting, file uploads
 │   │   ├── django/CLAUDE.md       # ORM, CSRF, templates, settings
 │   │   ├── flask/CLAUDE.md        # Werkzeug, sessions, blueprints, extensions
-│   │   └── nestjs/CLAUDE.md       # Decorators, guards, pipes, interceptors
+│   │   ├── nestjs/CLAUDE.md       # Decorators, guards, pipes, interceptors
+│   │   ├── langchain/CLAUDE.md    # Prompt injection, tool security, chains, RAG
+│   │   ├── crewai/CLAUDE.md       # Multi-agent trust, delegation, memory isolation
+│   │   ├── autogen/CLAUDE.md      # Code execution, human-in-loop, sandboxing
+│   │   ├── transformers/CLAUDE.md # Model loading, tokenizers, fine-tuning
+│   │   ├── vllm/CLAUDE.md         # KV cache, PagedAttention, batching security
+│   │   ├── triton/CLAUDE.md       # GPU isolation, ensemble security, gRPC
+│   │   ├── torchserve/CLAUDE.md   # MAR files, custom handlers, management API
+│   │   ├── ray-serve/CLAUDE.md    # Deployment, autoscaling, serialization
+│   │   ├── bentoml/CLAUDE.md      # Bento packaging, runners, API security
+│   │   ├── mlflow/CLAUDE.md       # Model registry, experiment tracking, artifacts
+│   │   └── modal/CLAUDE.md        # Serverless functions, secrets, containers
 │   │
 │   └── frontend/                   # Frontend framework rules
 │       ├── react/CLAUDE.md        # XSS prevention, state management, CSRF, forms
@@ -72,8 +85,9 @@ claude-secure-coding-rules/
 | Core Rules | 3 | OWASP 2025, AI Security, Agent Security |
 | Languages | 12 | Python, JavaScript, TypeScript, Go, Rust, Java, C#, Ruby, R, C++, Julia, SQL |
 | Backend Frameworks | 5 | FastAPI, Express, Django, Flask, NestJS |
+| AI/ML Frameworks | 11 | LangChain, CrewAI, AutoGen, Transformers, vLLM, Triton, TorchServe, Ray Serve, BentoML, MLflow, Modal |
 | Frontend Frameworks | 5 | React, Next.js, Vue, Angular, Svelte |
-| **Total Rule Sets** | **25** | Comprehensive security coverage |
+| **Total Rule Sets** | **36** | Comprehensive security coverage |
 
 ## Rule Format
 

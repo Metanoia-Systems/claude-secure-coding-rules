@@ -117,7 +117,8 @@ claude-secure-coding-rules/
 │   │   │   ├── pinecone/CLAUDE.md
 │   │   │   ├── weaviate-cloud/CLAUDE.md
 │   │   │   ├── mongodb-atlas/CLAUDE.md
-│   │   │   └── azure-ai-search/CLAUDE.md
+│   │   │   ├── azure-ai-search/CLAUDE.md
+│   │   │   └── zilliz/CLAUDE.md
 │   │   ├── vector-selfhosted/   # Self-hosted vector databases
 │   │   │   ├── milvus/CLAUDE.md
 │   │   │   ├── qdrant/CLAUDE.md
@@ -126,17 +127,22 @@ claude-secure-coding-rules/
 │   │   │   └── chroma/CLAUDE.md
 │   │   ├── graph/               # Graph databases
 │   │   │   ├── neo4j/CLAUDE.md
-│   │   │   └── neptune/CLAUDE.md
+│   │   │   ├── neptune/CLAUDE.md
+│   │   │   ├── tigergraph/CLAUDE.md
+│   │   │   ├── arangodb/CLAUDE.md
+│   │   │   └── memgraph/CLAUDE.md
 │   │   ├── embeddings/          # Embedding models
 │   │   │   ├── api-embeddings/CLAUDE.md
 │   │   │   └── local-embeddings/CLAUDE.md
 │   │   ├── document-processing/ # Document parsers
 │   │   │   ├── unstructured/CLAUDE.md
 │   │   │   ├── llamaparse/CLAUDE.md
-│   │   │   └── parsers-ocr/CLAUDE.md
+│   │   │   ├── parsers-ocr/CLAUDE.md
+│   │   │   └── docling/CLAUDE.md
 │   │   ├── chunking/CLAUDE.md   # Chunking strategies
 │   │   ├── search-rerank/       # Search and reranking
-│   │   │   └── neural-rerankers/CLAUDE.md
+│   │   │   ├── neural-rerankers/CLAUDE.md
+│   │   │   └── lexical/CLAUDE.md
 │   │   └── observability/       # RAG observability
 │   │       ├── langsmith/CLAUDE.md
 │   │       ├── arize-phoenix/CLAUDE.md

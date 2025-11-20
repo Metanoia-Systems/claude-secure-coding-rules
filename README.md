@@ -194,10 +194,14 @@ claude-secure-coding-rules/
 Claude Code applies rules hierarchically:
 
 1. **Global rules** (`~/.claude/CLAUDE.md`) - Apply to all projects
-2. **Project rules** (`/project/CLAUDE.md`) - Apply to entire project
-3. **Directory rules** (`/project/src/CLAUDE.md`) - Apply to specific directories
+2. **Project rules** - Apply to entire project
+   - `/project/.claude/CLAUDE.md` (preferred)
+   - `/project/CLAUDE.md` (alternative)
+3. **Directory rules** - Apply to specific directories
+   - `/project/src/.claude/CLAUDE.md` (preferred)
+   - `/project/src/CLAUDE.md` (alternative)
 
-More specific rules take precedence over general rules.
+More specific rules take precedence over general rules. The `.claude` folder approach keeps configuration organized and separate from your main codebase.
 
 ### Implementation Patterns
 

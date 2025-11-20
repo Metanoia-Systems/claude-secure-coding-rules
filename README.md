@@ -14,7 +14,7 @@ This repository provides comprehensive security rules for Claude Code, covering 
 - **OWASP Top 10 2025** - Complete coverage of modern web security risks
 - **AI/ML Security** - Rules for machine learning systems using NIST AI RMF, MITRE ATLAS, and Google SAIF
 - **Agentic AI Security** - Specialized rules for autonomous AI systems with tool use
-- **70+ Rule Sets** - Covering 12 languages, 5 backend frameworks, 11 AI/ML frameworks, 5 frontend frameworks, and 30+ RAG/Knowledge Infrastructure tools
+- **100+ Rule Sets** - Covering 12 languages, 5 backend frameworks, 11 AI/ML frameworks, 5 frontend frameworks, 51 RAG tools, IaC (Terraform/Pulumi), containers (Docker/K8s), and CI/CD (GitHub Actions/GitLab CI)
 - **Enforcement Levels** - Strict, warning, and advisory modes for different risk levels
 
 ## Quick Start
@@ -148,12 +148,33 @@ claude-secure-coding-rules/
 │   │       ├── arize-phoenix/CLAUDE.md
 │   │       └── monitoring/CLAUDE.md
 │   │
-│   └── frontend/                # Frontend framework rules
-│       ├── react/CLAUDE.md      # React (XSS, state, forms)
-│       ├── nextjs/CLAUDE.md     # Next.js (Server Components, Server Actions)
-│       ├── vue/CLAUDE.md        # Vue (v-html, computed properties)
-│       ├── angular/CLAUDE.md    # Angular (DomSanitizer, template injection)
-│       └── svelte/CLAUDE.md     # Svelte ({@html}, stores)
+│   ├── frontend/                # Frontend framework rules
+│   │   ├── react/CLAUDE.md      # React (XSS, state, forms)
+│   │   ├── nextjs/CLAUDE.md     # Next.js (Server Components, Server Actions)
+│   │   ├── vue/CLAUDE.md        # Vue (v-html, computed properties)
+│   │   ├── angular/CLAUDE.md    # Angular (DomSanitizer, template injection)
+│   │   └── svelte/CLAUDE.md     # Svelte ({@html}, stores)
+│   │
+│   ├── iac/                     # Infrastructure as Code rules
+│   │   ├── _core/iac-security.md  # Core IaC security principles
+│   │   ├── terraform/CLAUDE.md    # Terraform (state, modules, providers)
+│   │   └── pulumi/CLAUDE.md       # Pulumi (secrets, CrossGuard, ESC)
+│   │
+│   ├── containers/              # Container security rules
+│   │   ├── _core/container-security.md  # Core container principles
+│   │   ├── docker/CLAUDE.md     # Docker (images, runtime, scanning)
+│   │   └── kubernetes/CLAUDE.md # Kubernetes (PSS, RBAC, NetworkPolicies)
+│   │
+│   └── cicd/                    # CI/CD security rules
+│       ├── _core/cicd-security.md  # Core CI/CD principles
+│       ├── github-actions/CLAUDE.md  # GitHub Actions (SHA pinning, OIDC)
+│       └── gitlab-ci/CLAUDE.md      # GitLab CI (protected vars, scanning)
+│
+├── tests/                       # Rule testing framework
+│   ├── structural/              # Rule format validation
+│   ├── code_validation/         # Code example validation
+│   ├── security/                # SAST integration tests
+│   └── coverage/                # CWE/OWASP coverage analysis
 │
 ├── templates/                   # Templates for adding new rules
 │   ├── rule-template.md        # Template for individual rules
@@ -487,12 +508,12 @@ We welcome contributions! See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for:
 ## Roadmap
 
 - [x] RAG & Knowledge Infrastructure (51 tools across vector DBs, graph DBs, embeddings, chunking, observability)
+- [x] Infrastructure as Code (22 rules: Terraform, Pulumi)
+- [x] Container security (27 rules: Docker, Kubernetes)
+- [x] CI/CD security (24 rules: GitHub Actions, GitLab CI)
+- [x] Rule testing framework (pytest, Semgrep, Bandit integration)
 - [ ] Additional backend frameworks (Spring Boot, Rails, Laravel)
 - [ ] Mobile frameworks (React Native, Flutter)
-- [ ] Infrastructure as Code (Terraform, Pulumi)
-- [ ] Container security (Docker, Kubernetes)
-- [ ] CI/CD security (GitHub Actions, GitLab CI)
-- [ ] Rule testing framework
 - [ ] VS Code extension for rule management
 
 ## FAQ

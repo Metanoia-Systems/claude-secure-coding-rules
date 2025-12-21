@@ -1,0 +1,34 @@
+# CODEOWNERS - Auto-assign reviewers for PRs
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in the repo
+* @TikiTribe/maintainers
+
+# Core security rules require security team review
+/rules/_core/ @TikiTribe/maintainers
+
+# AI/ML specific rules
+/rules/aiml/ @TikiTribe/maintainers
+
+# Infrastructure as Code rules
+/rules/iac/ @TikiTribe/maintainers
+
+# Language-specific rules
+/rules/languages/ @TikiTribe/maintainers
+
+# Backend framework rules
+/rules/backend/ @TikiTribe/maintainers
+
+# Frontend framework rules
+/rules/frontend/ @TikiTribe/maintainers
+
+# Test framework changes
+/tests/ @TikiTribe/maintainers
+
+# CI/CD and GitHub configuration
+/.github/ @TikiTribe/maintainers
+
+# Documentation
+/docs/ @TikiTribe/maintainers
+README.md @TikiTribe/maintainers
+CLAUDE.md @TikiTribe/maintainers

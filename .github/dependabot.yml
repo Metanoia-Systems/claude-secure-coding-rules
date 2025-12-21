@@ -16,7 +16,7 @@ updates:
     commit-message:
       prefix: "deps"
     reviewers:
-      - "TikiTribe/maintainers"
+      - "rocklambros"
 
   # GitHub Actions
   - package-ecosystem: "github-actions"
@@ -31,4 +31,4 @@ updates:
     commit-message:
       prefix: "ci"
     reviewers:
-      - "TikiTribe/maintainers"
+      - "rocklambros"
